@@ -1,0 +1,50 @@
+Hint For Changes CI 3
+
+
+1 Add  Config File in Codelgniter.php
+
+i.e. require_once(APPPATH.'config/basic_setup.php');
+
+2. Add Path & data Base Name
+
+3. Add Routes Name (landing page)
+
+4. Chage index.php  ENVIRONMENT based on production or development
+
+5.Config File Changes(config.php)
+
+1) $config['base_url'] = WEB_URL;//"http://".$_SERVER['HTTP_HOST']."";
+
+2) chage
+ $config['index_page'] = 'index.php';
+  $config['index_page'] = '';
+
+3) $config['composer_autoload'] = "./vendor/autoload.php";
+
+4) config['sess_driver'] = 'database';//files database
+   $config['sess_cookie_name'] = 'ci_sessions';
+   $config['sess_expiration'] = 7200;
+   $config['sess_save_path'] = 'ci_sessions';
+   $config['sess_match_ip'] = FALSE;
+   $config['sess_time_to_update'] = 7200;
+   $config['sess_regenerate_destroy'] = FALSE;
+
+
+5 For Session
+1.Check Session.php library
+2.Check Session_database_driver.php
+
+6.Changes Libraries
+Form_validation.php
+Upload.php
+
+
+Change autoload.php
+
+$autoload['libraries'] = array('database', 'session','form_validation','upload');
+
+$autoload['helper'] = array('url', 'file','user_helper');
+
+7. Create user_helper for helper
+
+
